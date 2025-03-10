@@ -1,0 +1,25 @@
+name: InClass03SYST Workflow
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step one (checkout)
+        uses: actions/checkout@v4
+      - name: Step two (list files)
+        run: ls -la
+  job2:
+    runs-on: windows-latest
+    steps:
+      - name: Step one of job 2 (checkout)
+        uses: actions/checkout@v4
+      - name: Step two of job 2 (print working directory)
+        run: pwd
+      - name: Step three of job 2 (list directory contents)
+        run: dir
